@@ -1,15 +1,18 @@
 def main():
     for _ in range(int(input())):
-        g=int(input())
-        foo=list(map(int,input().split()))
-        init = foo[2]*foo[1]
-        for n in range(foo[1]) :
-            for j in range(n) :
-                if (init[j]==1) :
-                    init[j]=2
-                else:
-                    init[j]=1
-        print(init.count(foo[2]))
-
+        for _ in range(int(input())):
+            arr = [int(n) for n in input().split()]
+            i = arr[0]
+            n = arr[1]
+            q = arr[2]
+            foo=[i]*n
+            for flip in range(n):
+                for num in range(flip+1):
+                    if foo[num]==1:
+                        foo[num]=2
+                    else:
+                        foo[num]=1
+            print(foo.count(q))
+            
 if __name__=='__main__':
     main()
